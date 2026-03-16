@@ -1,4 +1,4 @@
-__version__ = "2026-02-18"
+__version__ = "2026-03-17"
 __author__ = "Mathew Lipson"
 __email__ = "m.lipson@unsw.edu.au"
 
@@ -21,12 +21,11 @@ from mpl_toolkits.axes_grid1.inset_locator import inset_axes
 from matplotlib.colorbar import ColorbarBase
 import cartopy.crs as ccrs
 import cartopy.geodesic as cgeo
-import importlib
 
 ############## set up ##############
 
 oshome=os.getenv('HOME')
-ancil_path = '/scratch/ce10/mjl561/cylc-run/ancils_HM-AU_default/share/data/ancils/HM_default'
+ancil_path = '/scratch/ce10/mjl561/cylc-run/ancils_HM-AU_small/share/data/ancils/HM_small'
 plot_path = os.path.dirname(ancil_path) # parent dir of ancil_path
 domains = os.listdir(ancil_path) # list of dirs in ancil_path
 region = ancil_path.split("/")[-1]
@@ -249,4 +248,5 @@ def get_variable_opts(variable):
     return opts
 
 if __name__ == '__main__':
+    # Plot all domains
     data = plot_domain_orography()
